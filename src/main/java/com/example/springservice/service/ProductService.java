@@ -15,11 +15,18 @@ public class ProductService {
 
     private ProductRepo productRepository;
 
-    public List<Product> all(){
+    public List<Product> getAllProducts(){
         return  productRepository.findAll();
     }
 
-    public Product updateOrUpdate(Product product){
+    public Product sellProduct(int productId,int quantity){
+        Product product = productRepository.getById(productId);
+        product.setQuantity(product.getQuantity() - quantity);
+
+        return  productRepository.save(product);
+    }
+
+    public Product addProduct(Product product){
         return productRepository.save(product);
     }
 }
