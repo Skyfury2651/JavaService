@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -13,9 +15,11 @@ import javax.persistence.Id;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+public class Product {
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int Id;
     private String name;
-    private String address;
+    private double price;
+    private int quantity;
 }

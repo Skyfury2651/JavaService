@@ -11,15 +11,9 @@
        http://jax-ws.dev.java.net/spring/servlet.xsd"
 >
 
-    <wss:binding url="/ws/hello">
+    <wss:binding url="/ws/product">
         <wss:service>
-            <ws:service bean="#helloService"/>
-        </wss:service>
-    </wss:binding>
-
-    <wss:binding url="/ws/student">
-        <wss:service>
-            <ws:service bean="#studentService"/>
+            <ws:service bean="#productService"/>
         </wss:service>
     </wss:binding>
 
